@@ -14,15 +14,28 @@ const cidades = reactive([
   "Porto Alegre",
   "Brasília",
 ]);
-function adicionar() {
+const cidadesOrdenadas = computed(() => {
+  return cidades.slice().sort((a, b) => a.localeCompare(b));
+});
+function adicionarOrdenado() {
   cidades.push(novoItem.value);
+  cidades.sort((a, b) => a.localeCompare(b));
   novoItem.value = "";
+}
+function keycode() {
+  if (event.keyCode === 13) {
+    adicionar();
+  }
 }
 </script>
 <template>
   <div>
-    <p v-for="(item, index) in cidades" :key="index">{{ item }}</p>
+    <link rel="stylesheet" href="./css/style.css">
+    <p v-for="(item, index) in cidadesOrdenadas" :key="index">{{ item }}</p>
     <input type="text" v-model="novoItem" />
-    <button @click="adicionar">Adicionar</button>
+    <button type="submit" @click="adicionarOrdenado">Adicionar</button>
   </div>
 </template>
+<style lang="scss" scoped>
+@import "./css/style.css";
+</style>
