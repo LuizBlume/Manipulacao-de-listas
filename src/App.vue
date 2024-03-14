@@ -29,11 +29,11 @@ function keycode() {
 }
 </script>
 <template>
-  <div>
+  <div class="container">
     <link rel="stylesheet" href="./css/style.css">
-    <p v-for="(item, index) in cidadesOrdenadas" :key="index">{{ item }}</p>
-    <input type="text" v-model="novoItem" />
-    <button type="submit" @click="adicionarOrdenado">Adicionar</button>
+    <p class="itens" v-for="(item, index) in cidadesOrdenadas" :key="index">{{ item }}</p>
+    <input class="inpt" type="text" v-model="novoItem" />
+    <button class="button" type="submit" @click="adicionarOrdenado">Adicionar</button>
   </div>
 </template>
 <style lang="scss" scoped>
