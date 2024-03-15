@@ -3,16 +3,43 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 @import './components/_color.scss';
-body {
-    background-color: $black;
-    width: 100%;
-    p {
-        color: $purple;
-    }
+@import './components/_tipography.scss';
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
 }
+
+.itens {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.input {
+    width: calc(100% - 80px); // Subtrai o tamanho do botão
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 5px 0 0 5px;
+}
+
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 80px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
 }
